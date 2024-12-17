@@ -14,16 +14,18 @@ public class p_Movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.W))
         {
+            //print("W");
             //rb.AddForce(Vector2.up * moveSpeed);
             FMODUnity.RuntimeManager.PlayOneShot("event:/Test Events/TestEvent");
             rb.velocity = (Vector2.up * moveSpeedUp);
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKeyDown(KeyCode.S))
         {
+            //print("S");
             //rb.AddForce(Vector2.up * moveSpeed);
             FMODUnity.RuntimeManager.PlayOneShot("event:/Test Events/TestEvent");
             rb.velocity = (Vector2.down * moveSpeedDown);
