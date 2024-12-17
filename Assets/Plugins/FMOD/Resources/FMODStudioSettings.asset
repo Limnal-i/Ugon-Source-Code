@@ -536,8 +536,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../../FMOD Studio/FlappyGame/FlappyGame.fspro
-  sourceBankPath: ../../FMOD Studio/FlappyGame/Build
+  sourceProjectPath: FlappyGame/FlappyGame.fspro
+  sourceBankPath: FlappyGame/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
