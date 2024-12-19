@@ -49,12 +49,13 @@ public class gameManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             CancelInvoke(nameof(spawn_Obstacle));
             controller = GameObject.FindObjectOfType<playerController>();
             controller.forceApplied = playerSpeed;
             print(controller.forceApplied);
+        }
         else if (Input.GetKeyDown(KeyCode.G))
         {
             CancelInvoke(nameof(spawn_Obstacle));;
