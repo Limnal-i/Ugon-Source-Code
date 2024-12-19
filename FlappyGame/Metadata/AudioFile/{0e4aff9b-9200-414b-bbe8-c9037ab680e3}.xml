@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{0e4aff9b-9200-414b-bbe8-c9037ab680e3}">
+		<property name="assetPath">
+			<value>Game Sounds/582695__ironcross32__short-beep-04.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.070000000000000007</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{9a47a9de-8597-4463-981d-d2dfcdb0a8e2}</destination>
+		</relationship>
+	</object>
+</objects>

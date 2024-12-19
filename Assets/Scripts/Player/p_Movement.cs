@@ -22,12 +22,12 @@ public class p_Movement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Test Events/TestEvent");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Game Events/Player_Move");
             rb.velocity = (Vector2.up * moveSpeedUp);
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Test Events/TestEvent");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Game Events/Player_Move");
             rb.velocity = (Vector2.down * moveSpeedDown);
         }
     }
