@@ -429,8 +429,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacle: {fileID: 8743015670201043892, guid: eca68805ca9494f489ec46c3eb9b8e9b, type: 3}
-  minSpawnAmount: 1
-  maxSpawnAmount: 2
+  minSpawnTime: 1
+  maxSpawnTime: 3
   minSpawnHeight: -3
   maxSpawnHeight: 4
   objectSpawnSpeed: 15

@@ -8,8 +8,8 @@ public class gameManager : MonoBehaviour
 
     [SerializeField] GameObject obstacle;
 
-    [SerializeField] float minSpawnAmount;
-    [SerializeField] float maxSpawnAmount;
+    [SerializeField] float minSpawnTime;
+    [SerializeField] float maxSpawnTime;
 
     [SerializeField] float minSpawnHeight;
     [SerializeField] float maxSpawnHeight;
@@ -18,10 +18,10 @@ public class gameManager : MonoBehaviour
 
     // -------------------------------------------------------------------------------------------------------------------------------------
 
-    // On Enable Invoke Obstacle Spawning after (range between spawn amount) seconds. Repeat every (range between spawn amount) seconds.
+    // On Enable Invoke Obstacle Spawning after (range between spawn Time) seconds. Repeat every (range between spawn Time) seconds.
     private void OnEnable()
     {
-        InvokeRepeating(nameof(spawn_Obstacle), Random.Range(minSpawnAmount, maxSpawnAmount), Random.Range(minSpawnAmount, maxSpawnAmount));
+        InvokeRepeating(nameof(spawn_Obstacle), Random.Range(minSpawnTime, maxSpawnTime), Random.Range(minSpawnTime, maxSpawnTime));
     }
 
     // Stop Invoke when disabled
