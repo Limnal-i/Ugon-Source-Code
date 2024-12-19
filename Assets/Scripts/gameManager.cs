@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class o_Spawn : MonoBehaviour
+public class gameManager : MonoBehaviour
 {
     // Variables
 
@@ -35,6 +35,6 @@ public class o_Spawn : MonoBehaviour
     {
         GameObject spawn = Instantiate(obstacle, transform.position, Quaternion.identity);
         spawn.transform.position += Vector3.up * Random.Range(minSpawnHeight, maxSpawnHeight);
-        spawn.GetComponent<o_Move>().objectSpeed = objectSpawnSpeed;
+        spawn.GetComponent<objectMover>().objectSpeed = objectSpawnSpeed;
     }
 }

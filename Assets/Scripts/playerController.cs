@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class p_Movement : MonoBehaviour
+public class playerController : MonoBehaviour
 {
     // Variables 
     Rigidbody2D rb;

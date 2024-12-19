@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class o_Move : MonoBehaviour
+public class objectMover : MonoBehaviour
 {
     // Variables 
 
