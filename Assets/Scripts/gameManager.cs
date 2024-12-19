@@ -16,12 +16,17 @@ public class gameManager : MonoBehaviour
 
     [SerializeField] float objectSpawnSpeed;
 
+    [SerializeField] Vector2 gravity;
     // -------------------------------------------------------------------------------------------------------------------------------------
 
     // On Enable Invoke Obstacle Spawning after (range between spawn Time) seconds. Repeat every (range between spawn Time) seconds.
     private void OnEnable()
     {
         InvokeRepeating(nameof(spawn_Obstacle), Random.Range(minSpawnTime, maxSpawnTime), Random.Range(minSpawnTime, maxSpawnTime));
+
+        print(Physics2D.gravity);
+
+        gravity = Physics2D.gravity;
     }
 
     // Stop Invoke when disabled
@@ -36,5 +41,15 @@ public class gameManager : MonoBehaviour
         GameObject spawn = Instantiate(obstacle, transform.position, Quaternion.identity);
         spawn.transform.position += Vector3.up * Random.Range(minSpawnHeight, maxSpawnHeight);
         spawn.GetComponent<objectMover>().objectSpeed = objectSpawnSpeed;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            CancelInvoke(nameof(spawn_Obstacle));;
+            Physics2D.gravity = gravity;
+            print(Physics2D.gravity);
+        }
     }
 }
