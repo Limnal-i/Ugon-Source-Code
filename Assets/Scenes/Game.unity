@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 150147263}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -395,8 +395,8 @@ GameObject:
   - component: {fileID: 996472603}
   - component: {fileID: 996472604}
   m_Layer: 0
-  m_Name: Obstacle Creator
-  m_TagString: Untagged
+  m_Name: Game Manager
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -433,6 +433,7 @@ MonoBehaviour:
   maxSpawnAmount: 3
   minSpawnHeight: -5
   maxSpawnHeight: 5
+  objectSpawnSpeed: 15
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

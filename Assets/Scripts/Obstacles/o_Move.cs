@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class o_Move : MonoBehaviour
 {
-    [SerializeField] float objectSpeed;
+    // Variables 
+
+    public float objectSpeed;
+
     Rigidbody2D rb;
     BoxCollider2D bc;
 
     float screenEdgeLeft;
     float objectWidth;
 
+    // ---------------------------------------------------------------------------------
+
+    // Allow Script to access needed components. Save Camera bounds on X axis.
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -21,6 +27,7 @@ public class o_Move : MonoBehaviour
         screenEdgeLeft = Camera.main.ScreenToWorldPoint(Vector3.zero).x - objectWidth;
     }
 
+    // Add force to obstacle object. If beyond left camera bounds destroy self.
     private void FixedUpdate()
     {
         rb.AddForce(Vector2.left * objectSpeed);
