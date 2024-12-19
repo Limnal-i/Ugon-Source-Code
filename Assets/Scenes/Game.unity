@@ -431,7 +431,7 @@ MonoBehaviour:
   obstacle: {fileID: 8743015670201043892, guid: eca68805ca9494f489ec46c3eb9b8e9b, type: 3}
   minSpawnAmount: 1
   maxSpawnAmount: 2
-  minSpawnHeight: 5
+  minSpawnHeight: 0
   maxSpawnHeight: 5
   objectSpawnSpeed: 15
 --- !u!1660057539 &9223372036854775807
