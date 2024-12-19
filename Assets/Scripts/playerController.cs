@@ -6,9 +6,11 @@ public class playerController : MonoBehaviour
 {
     // Variables 
     Rigidbody2D rb;
-    [SerializeField] float moveSpeedUp;
-    [SerializeField] float moveSpeedDown;
 
+    //[SerializeField] float moveSpeedUp;
+    //[SerializeField] float moveSpeedDown;
+
+    [SerializeField] float forceApplied;
     // ---------------------------------------------------------------------------
 
     // Enable script to access Ridgidbody component
@@ -23,12 +25,12 @@ public class playerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             FMODUnity.RuntimeManager.PlayOneShot("event:/Game Events/Player_Move");
-            rb.velocity = (Vector2.up * moveSpeedUp);
+            rb.velocity = (Vector2.up * forceApplied);
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
             FMODUnity.RuntimeManager.PlayOneShot("event:/Game Events/Player_Move");
-            rb.velocity = (Vector2.down * moveSpeedDown);
+            rb.velocity = (Vector2.down * forceApplied);
         }
     }
 }
