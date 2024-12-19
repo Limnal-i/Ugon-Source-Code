@@ -433,6 +433,7 @@ MonoBehaviour:
   minSpawnHeight: -3
   maxSpawnHeight: 4
   objectSpawnSpeed: 15
+  playerSpeed: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

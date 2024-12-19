@@ -10,7 +10,7 @@ public class playerController : MonoBehaviour
     //[SerializeField] float moveSpeedUp;
     //[SerializeField] float moveSpeedDown;
 
-    [SerializeField] float forceApplied;
+    public float forceApplied;
     // ---------------------------------------------------------------------------
 
     // Enable script to access Ridgidbody component
