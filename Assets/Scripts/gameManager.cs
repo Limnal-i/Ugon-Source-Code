@@ -6,7 +6,6 @@ public class gameManager : MonoBehaviour
 {
     // Variables
 
-    [SerializeField] GameObject obstacle;
 
     [SerializeField] float minSpawnTime;
     [SerializeField] float maxSpawnTime;
@@ -16,8 +15,11 @@ public class gameManager : MonoBehaviour
 
     [SerializeField] float objectSpawnSpeed;
 
-    playerController controller;
     [SerializeField] float playerSpeed;
+
+    playerController controller;
+
+    [SerializeField] GameObject obstacle;
 
     [SerializeField] Vector2 gravity;
 
@@ -27,8 +29,6 @@ public class gameManager : MonoBehaviour
     private void OnEnable()
     {
         InvokeRepeating(nameof(spawn_Obstacle), Random.Range(minSpawnTime, maxSpawnTime), Random.Range(minSpawnTime, maxSpawnTime));
-
-        print(Physics2D.gravity);
 
         gravity = Physics2D.gravity;
     }

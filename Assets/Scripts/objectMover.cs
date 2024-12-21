@@ -8,11 +8,11 @@ public class objectMover : MonoBehaviour
 
     public float objectSpeed;
 
-    Rigidbody2D rb;
-    BoxCollider2D bc;
-
     float screenEdgeLeft;
     float objectWidth;
+
+    Rigidbody2D rb;
+    BoxCollider2D bc;
 
     // ---------------------------------------------------------------------------------
 

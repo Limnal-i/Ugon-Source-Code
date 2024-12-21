@@ -430,10 +430,11 @@ MonoBehaviour:
   obstacle: {fileID: 8743015670201043892, guid: eca68805ca9494f489ec46c3eb9b8e9b, type: 3}
   minSpawnTime: 1
   maxSpawnTime: 3
-  minSpawnHeight: -3
-  maxSpawnHeight: 4
+  minSpawnHeight: -5
+  maxSpawnHeight: 5
   objectSpawnSpeed: 15
   playerSpeed: 5
+  gravity: {x: 0, y: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

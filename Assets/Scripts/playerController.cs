@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
-    // Variables 
-    Rigidbody2D rb;
-
-    //[SerializeField] float moveSpeedUp;
-    //[SerializeField] float moveSpeedDown;
+    // Variables
 
     public float forceApplied;
+
+    Rigidbody2D rb;
+
     // ---------------------------------------------------------------------------
 
     // Enable script to access Ridgidbody component
