@@ -23,6 +23,12 @@ public class gameManager : MonoBehaviour
 
     [SerializeField] Vector2 gravity;
 
+    // Manipulation variables
+    /*
+    [SerializeField] float gravityDecrease;
+    [SerializeField] float playerSpeedIncrease;
+    [SerializeField] float objectSpeedIncrease;
+    */
     // -------------------------------------------------------------------------------------------------------------------------------------
 
     // On Enable Invoke Obstacle Spawning after (range between spawn Time) seconds. Repeat every (range between spawn Time) seconds.
@@ -31,6 +37,7 @@ public class gameManager : MonoBehaviour
         InvokeRepeating(nameof(spawn_Obstacle), Random.Range(minSpawnTime, maxSpawnTime), Random.Range(minSpawnTime, maxSpawnTime));
 
         gravity = Physics2D.gravity;
+        controller = GameObject.FindObjectOfType<playerController>();
     }
 
     // Stop Invoke when disabled
@@ -49,10 +56,12 @@ public class gameManager : MonoBehaviour
 
     private void Update()
     {
+        controller.forceApplied = playerSpeed;
+        Physics2D.gravity = gravity;
+        /*
         if (Input.GetKeyDown(KeyCode.P))
         {
             CancelInvoke(nameof(spawn_Obstacle));
-            controller = GameObject.FindObjectOfType<playerController>();
             controller.forceApplied = playerSpeed;
             print(controller.forceApplied);
         }
@@ -62,5 +71,6 @@ public class gameManager : MonoBehaviour
             Physics2D.gravity = gravity;
             print(Physics2D.gravity);
         }
+        */
     }
 }
