@@ -51,7 +51,6 @@ public class gameManager : MonoBehaviour
 
     private void valueManipulator()
     {
-        print("value manip called!");
         playerSpeed += 0.1f;
         objectSpawnSpeed++;
     }
