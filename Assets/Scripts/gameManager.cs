@@ -22,6 +22,8 @@ public class gameManager : MonoBehaviour
     [SerializeField] GameObject obstacle;
 
     [SerializeField] Vector2 gravity;
+
+    [SerializeField] int playerScore;
     
     // -------------------------------------------------------------------------------------------------------------------------------------
 
@@ -33,6 +35,7 @@ public class gameManager : MonoBehaviour
 
         gravity = Physics2D.gravity;
         controller = GameObject.FindObjectOfType<playerController>();
+        playerScore = 0;
     }
 
     // Stop Invoke when disabled
@@ -59,5 +62,11 @@ public class gameManager : MonoBehaviour
     {
         controller.forceApplied = playerSpeed;
         Physics2D.gravity = gravity;
+    }
+
+    public void addToScore()
+    {
+        playerScore++;
+        print(playerScore);
     }
 }
