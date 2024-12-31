@@ -5,6 +5,7 @@ using UnityEngine;
 public class gameManager : MonoBehaviour
 {
     // Variables
+    [SerializeField] float minSpawnTime;
     [SerializeField] float maxSpawnTime;
 
     [SerializeField] float minSpawnHeight;
@@ -25,7 +26,7 @@ public class gameManager : MonoBehaviour
     // On Enable Invoke Obstacle Spawning after (range between spawn Time) seconds. Repeat every (range between spawn Time) seconds.
     private void OnEnable()
     {
-        InvokeRepeating(nameof(spawn_Obstacle), Random.Range(1f, 3f), Random.Range(1f, maxSpawnTime));
+        InvokeRepeating(nameof(spawn_Obstacle), Random.Range(1f, 3f), Random.Range(minSpawnTime, maxSpawnTime));
         InvokeRepeating(nameof(valueManipulator), Random.Range(3f, 5f), Random.Range(3f, 5f));
 
         gravity = Physics2D.gravity;
@@ -53,9 +54,13 @@ public class gameManager : MonoBehaviour
             playerSpeed += 0.1f;
         }
 
-        if (maxSpawnTime > 1.5f)
+        if (maxSpawnTime !>= 1f)
         {
             maxSpawnTime = maxSpawnTime - 0.1f;
+        }
+        if(minSpawnTime !>= 0f)
+        {
+            minSpawnTime = minSpawnTime - 0.1f;
         }
 
         objectSpawnSpeed++;

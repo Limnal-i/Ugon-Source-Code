@@ -357,7 +357,7 @@ Transform:
   m_GameObject: {fileID: 288914941}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.24157833, y: 6.1946115, z: 0.09438891}
+  m_LocalPosition: {x: 0, y: 8.2, z: 0}
   m_LocalScale: {x: -18, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -428,7 +428,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -543,7 +543,7 @@ Transform:
   m_GameObject: {fileID: 996472602}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.54, y: 0, z: 0}
+  m_LocalPosition: {x: 13.06, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -561,9 +561,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c2b5ba19c4fb5e448c480e81c752954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpawnTime: 3
-  minSpawnHeight: -4
-  maxSpawnHeight: 4
+  minSpawnTime: 1
+  maxSpawnTime: 5
+  minSpawnHeight: -5
+  maxSpawnHeight: 5
   objectSpawnSpeed: 5
   playerSpeed: 5
   obstacle: {fileID: 8743015670201043892, guid: eca68805ca9494f489ec46c3eb9b8e9b, type: 3}
@@ -640,7 +641,7 @@ Transform:
   m_GameObject: {fileID: 1028188591}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.24157833, y: -4.8053885, z: 0.09438891}
+  m_LocalPosition: {x: 0, y: -6.8, z: 0}
   m_LocalScale: {x: -18, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
