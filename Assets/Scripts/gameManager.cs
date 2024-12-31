@@ -69,4 +69,9 @@ public class gameManager : MonoBehaviour
         playerScore++;
         print(playerScore);
     }
+
+    public int getScore()
+    {
+        return playerScore;
+    }
 }
