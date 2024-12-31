@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class scoreText : MonoBehaviour
@@ -16,6 +18,13 @@ public class scoreText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreDisplay.text = "Score: " + scoreScript.getScore();
+        if (SceneManager.GetActiveScene().name == "Game")
+        {
+            scoreDisplay.text = "Score: " + scoreScript.getScore();
+        }
+        else
+        {
+            scoreDisplay.text = Convert.ToString(scoreScript.getScore());
+        }
     }
 }
