@@ -5,9 +5,6 @@ using UnityEngine;
 public class gameManager : MonoBehaviour
 {
     // Variables
-
-
-    [SerializeField] float minSpawnTime;
     [SerializeField] float maxSpawnTime;
 
     [SerializeField] float minSpawnHeight;
@@ -22,20 +19,17 @@ public class gameManager : MonoBehaviour
     [SerializeField] GameObject obstacle;
 
     [SerializeField] Vector2 gravity;
-
-    [SerializeField] int playerScore;
     
     // -------------------------------------------------------------------------------------------------------------------------------------
 
     // On Enable Invoke Obstacle Spawning after (range between spawn Time) seconds. Repeat every (range between spawn Time) seconds.
     private void OnEnable()
     {
-        InvokeRepeating(nameof(spawn_Obstacle), Random.Range(minSpawnTime, maxSpawnTime), Random.Range(minSpawnTime, maxSpawnTime));
+        InvokeRepeating(nameof(spawn_Obstacle), Random.Range(1f, 3f), Random.Range(1f, maxSpawnTime));
         InvokeRepeating(nameof(valueManipulator), Random.Range(3f, 5f), Random.Range(3f, 5f));
 
         gravity = Physics2D.gravity;
         controller = GameObject.FindObjectOfType<playerController>();
-        playerScore = 0;
     }
 
     // Stop Invoke when disabled
@@ -54,24 +48,23 @@ public class gameManager : MonoBehaviour
 
     private void valueManipulator()
     {
-        playerSpeed += 0.1f;
+        if (playerSpeed !<= 10)
+        {
+            playerSpeed += 0.1f;
+        }
+
+        if (maxSpawnTime > 1.5f)
+        {
+            maxSpawnTime = maxSpawnTime - 0.1f;
+        }
+
         objectSpawnSpeed++;
+
     }
 
     private void Update()
     {
         controller.forceApplied = playerSpeed;
         Physics2D.gravity = gravity;
-    }
-
-    public void addToScore()
-    {
-        playerScore++;
-        print(playerScore);
-    }
-
-    public int getScore()
-    {
-        return playerScore;
     }
 }

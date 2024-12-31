@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class playerCollision : MonoBehaviour
 {
-    gameManager gamemanager;
+    scoreKeeper scoreScript;
 
     private void Start()
     {
-        gamemanager = GameObject.FindAnyObjectByType<gameManager>();
+        scoreScript = GameObject.FindAnyObjectByType<scoreKeeper>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,7 +16,7 @@ public class playerCollision : MonoBehaviour
         {
             if (gameObject.tag == "Obstacle")
             {
-                gamemanager.addToScore();
+                scoreScript.addToScore();
             }
             else
             {

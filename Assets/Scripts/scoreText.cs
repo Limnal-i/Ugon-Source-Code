@@ -5,17 +5,17 @@ using UnityEngine.UI;
 
 public class scoreText : MonoBehaviour
 {
-    gameManager gamemanager;
+    scoreKeeper scoreScript;
     Text scoreDisplay;
     private void Start()
     {
-        gamemanager = GameObject.FindAnyObjectByType<gameManager>();
+        scoreScript = GameObject.FindAnyObjectByType<scoreKeeper>();
         scoreDisplay = GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        scoreDisplay.text = "Score: " + gamemanager.getScore();
+        scoreDisplay.text = "Score: " + scoreScript.getScore();
     }
 }
