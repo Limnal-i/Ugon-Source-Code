@@ -26,7 +26,7 @@ public class gameManager : MonoBehaviour
     // On Enable Invoke Obstacle Spawning after (range between spawn Time) seconds. Repeat every (range between spawn Time) seconds.
     private void OnEnable()
     {
-        InvokeRepeating(nameof(spawn_Obstacle), 2, Random.Range(minSpawnTime, maxSpawnTime));
+        InvokeRepeating(nameof(spawn_Obstacle), minSpawnTime, Random.Range(minSpawnTime, maxSpawnTime));
         InvokeRepeating(nameof(valueManipulator), Random.Range(3f, 5f), Random.Range(3f, 5f));
 
         gravity = Physics2D.gravity;
