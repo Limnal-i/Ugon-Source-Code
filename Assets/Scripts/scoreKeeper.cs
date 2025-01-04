@@ -22,6 +22,7 @@ public class scoreKeeper : MonoBehaviour
     public void addToScore(float multi)
     {
         playerScore += 10 * multi;
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Game Events/Player_Score");
     }
 
     public float getScore()

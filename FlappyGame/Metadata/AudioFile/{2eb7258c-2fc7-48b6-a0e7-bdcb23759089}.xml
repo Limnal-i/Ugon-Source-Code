@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{2eb7258c-2fc7-48b6-a0e7-bdcb23759089}">
+		<property name="assetPath">
+			<value>Game Sounds/140773__qubodup__computer-beep-sfx-for-videogames.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.095520833333333333</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{9a47a9de-8597-4463-981d-d2dfcdb0a8e2}</destination>
+		</relationship>
+	</object>
+</objects>
