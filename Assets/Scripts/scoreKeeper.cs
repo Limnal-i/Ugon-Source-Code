@@ -5,16 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class scoreKeeper : MonoBehaviour
 {
-    int playerScore;
+    int playerScore = 0;
 
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
     }
 
-    private void Start()
+    private void OnLevelWasLoaded(int level)
     {
-        if (SceneManager.GetActiveScene().name == "Game")
+        if(level == 1)
         {
             playerScore = 0;
         }
