@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class scoreKeeper : MonoBehaviour
 {
-    int playerScore = 0;
+    float playerScore = 0;
 
     void Awake()
     {
@@ -19,12 +19,12 @@ public class scoreKeeper : MonoBehaviour
             playerScore = 0;
         }
     }
-    public void addToScore()
+    public void addToScore(float multi)
     {
-        playerScore++;
+        playerScore += 10 * multi;
     }
 
-    public int getScore()
+    public float getScore()
     {
         return playerScore;
     }

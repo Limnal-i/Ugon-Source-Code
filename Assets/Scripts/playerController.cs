@@ -21,12 +21,12 @@ public class playerController : MonoBehaviour
     // Detect input and add velocity to player object. Play sound effect.
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             FMODUnity.RuntimeManager.PlayOneShot("event:/Game Events/Player_Move");
             rb.velocity = (Vector2.up * forceApplied);
         }
-        else if (Input.GetKeyDown(KeyCode.S))
+        else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             FMODUnity.RuntimeManager.PlayOneShot("event:/Game Events/Player_Move");
             rb.velocity = (Vector2.down * forceApplied);

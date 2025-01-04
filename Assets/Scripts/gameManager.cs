@@ -15,6 +15,8 @@ public class gameManager : MonoBehaviour
 
     [SerializeField] float playerSpeed;
 
+    public float scoreMulti = 1f;
+
     playerController controller;
 
     [SerializeField] GameObject obstacle;
@@ -76,6 +78,7 @@ public class gameManager : MonoBehaviour
                 minSpawnTime -= 0.5f;
             }
 
+            scoreMulti += 0.5f;
             objectSpawnSpeed++;
 
             yield return new WaitForSeconds(delay);
