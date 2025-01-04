@@ -266,7 +266,7 @@ Transform:
   m_GameObject: {fileID: 150147258}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -5, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -573,11 +573,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7551553730644128822, guid: eca68805ca9494f489ec46c3eb9b8e9b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.9259095
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7551553730644128822, guid: eca68805ca9494f489ec46c3eb9b8e9b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4456561
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7551553730644128822, guid: eca68805ca9494f489ec46c3eb9b8e9b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -945,8 +945,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.000030517578, y: -120.00003}
-  m_SizeDelta: {x: 350, y: 45}
+  m_AnchoredPosition: {x: 0, y: -120.00003}
+  m_SizeDelta: {x: 350, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1514764494
 MonoBehaviour:
@@ -970,11 +970,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 35
+    m_FontSize: 127
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 121
+    m_MaxSize: 128
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
