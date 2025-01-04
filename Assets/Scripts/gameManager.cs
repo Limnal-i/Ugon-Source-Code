@@ -26,8 +26,8 @@ public class gameManager : MonoBehaviour
     // On Enable Invoke Obstacle Spawning after (range between spawn Time) seconds. Repeat every (range between spawn Time) seconds.
     private void OnEnable()
     {
-        InvokeRepeating(nameof(spawn_Obstacle), minSpawnTime, Random.Range(minSpawnTime, maxSpawnTime));
-        InvokeRepeating(nameof(valueManipulator), Random.Range(3f, 5f), Random.Range(3f, 5f));
+        StartCoroutine(spawn_Obstacle(Random.Range(minSpawnTime, maxSpawnTime)));
+        StartCoroutine(valueManipulator(10f));
 
         gravity = Physics2D.gravity;
         controller = GameObject.FindObjectOfType<playerController>();
@@ -40,30 +40,47 @@ public class gameManager : MonoBehaviour
     }
 
     // Instantiate prefab object at current position.
-    private void spawn_Obstacle()
+    private IEnumerator spawn_Obstacle(float delay)
     {
-        GameObject spawn = Instantiate(obstacle, transform.position, Quaternion.identity);
-        spawn.transform.position += Vector3.up * Random.Range(minSpawnHeight, maxSpawnHeight);
-        spawn.GetComponent<objectMover>().objectSpeed = objectSpawnSpeed;
+        yield return new WaitForSeconds(delay);
+
+        while (true)
+        {
+            GameObject spawn = Instantiate(obstacle, transform.position, Quaternion.identity);
+            spawn.transform.position += Vector3.up * Random.Range(minSpawnHeight, maxSpawnHeight);
+            spawn.GetComponent<objectMover>().objectSpeed = objectSpawnSpeed;
+            delay = Random.Range(minSpawnTime, maxSpawnTime);
+            print("Time to wait = " + delay);
+            yield return new WaitForSeconds(delay);
+        }
+
     }
 
-    private void valueManipulator()
+    private IEnumerator valueManipulator(float delay)
     {
-        if (playerSpeed !<= 10)
+        yield return new WaitForSeconds(delay);
+
+        while (true)
         {
-            playerSpeed += 0.1f;
+            if (playerSpeed! <= 10)
+            {
+                playerSpeed += 0.5f;
+            }
+
+            if (maxSpawnTime! >= 1.5f)
+            {
+                maxSpawnTime -= 0.5f;
+            }
+            if (minSpawnTime > 0.5f)
+            {
+                minSpawnTime -= 0.5f;
+            }
+
+            objectSpawnSpeed++;
+
+            yield return new WaitForSeconds(delay);
         }
 
-        if (maxSpawnTime !>= 1f)
-        {
-            maxSpawnTime = maxSpawnTime - 0.1f;
-        }
-        if(minSpawnTime > 0f)
-        {
-            minSpawnTime = minSpawnTime - 0.1f;
-        }
-
-        objectSpawnSpeed++;
 
     }
 
