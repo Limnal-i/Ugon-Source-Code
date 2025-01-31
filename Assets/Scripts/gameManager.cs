@@ -5,17 +5,9 @@ using UnityEngine;
 public class gameManager : MonoBehaviour
 {
     // Variables
-    [SerializeField] float minSpawnTime;
-    [SerializeField] float maxSpawnTime;
+    [SerializeField] float minSpawnTime, maxSpawnTime, minSpawnHeight, maxSpawnHeight, objectSpawnSpeed, playerSpeed;
 
-    [SerializeField] float minSpawnHeight;
-    [SerializeField] float maxSpawnHeight;
-
-    [SerializeField] float objectSpawnSpeed;
-
-    [SerializeField] float playerSpeed;
-
-    public float scoreMulti = 1f;
+    public float scoreMulti;
 
     playerController controller;
 
@@ -30,7 +22,7 @@ public class gameManager : MonoBehaviour
     {
         StartCoroutine(spawn_Obstacle(Random.Range(minSpawnTime, maxSpawnTime)));
         StartCoroutine(valueManipulator(10f));
-
+        scoreMulti = 1f;
         gravity = Physics2D.gravity;
         controller = GameObject.FindObjectOfType<playerController>();
     }
@@ -52,7 +44,6 @@ public class gameManager : MonoBehaviour
             spawn.transform.position += Vector3.up * Random.Range(minSpawnHeight, maxSpawnHeight);
             spawn.GetComponent<objectMover>().objectSpeed = objectSpawnSpeed;
             delay = Random.Range(minSpawnTime, maxSpawnTime);
-            print("Time to wait = " + delay);
             yield return new WaitForSeconds(delay);
         }
 
