@@ -8,8 +8,7 @@ public class objectMover : MonoBehaviour
 
     public float objectSpeed;
 
-    float screenEdgeLeft;
-    float objectWidth;
+    float screenEdgeLeft, objectWidth;
 
     Rigidbody2D rb;
     BoxCollider2D bc;
@@ -27,7 +26,7 @@ public class objectMover : MonoBehaviour
         screenEdgeLeft = Camera.main.ScreenToWorldPoint(Vector3.zero).x - objectWidth;
     }
 
-    // Add force to obstacle object. If beyond left camera bounds destroy self.
+    // Add force to obstacle object. Once beyond left camera X bound destroy self.
     private void FixedUpdate()
     {
         rb.AddForce(Vector2.left * objectSpeed);

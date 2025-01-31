@@ -5,6 +5,7 @@ using UnityEngine;
 public class gameManager : MonoBehaviour
 {
     // Variables
+
     [SerializeField] float minSpawnTime, maxSpawnTime, minSpawnHeight, maxSpawnHeight, objectSpawnSpeed, playerSpeed;
 
     public float scoreMulti;
@@ -33,7 +34,7 @@ public class gameManager : MonoBehaviour
         CancelInvoke(nameof(spawn_Obstacle));
     }
 
-    // Instantiate prefab object at current position.
+    // Instantiate prefab object at position of GameObject script is attatched to.
     private IEnumerator spawn_Obstacle(float delay)
     {
         yield return new WaitForSeconds(delay);

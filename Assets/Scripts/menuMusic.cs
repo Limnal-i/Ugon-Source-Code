@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class menuMusic : MonoBehaviour
 {
+    // Variables
+
     private FMOD.Studio.EventInstance music;
-    // Start is called before the first frame update
+
+    // ---------------------------------------------------------------------------------
+
     void Start()
     {
         music = FMODUnity.RuntimeManager.CreateInstance("event:/Game Events/Music_Menu");

@@ -8,15 +8,19 @@ using UnityEngine.UI;
 
 public class scoreText : MonoBehaviour
 {
+    // Variables
+
     scoreKeeper scoreScript;
     private TMP_Text scoreDisplay;
+
+    // ---------------------------------------------------------------------------
+
     private void Start()
     {
         scoreScript = GameObject.FindAnyObjectByType<scoreKeeper>();
         scoreDisplay = GetComponent<TMP_Text>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (SceneManager.GetActiveScene().name == "Game")

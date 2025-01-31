@@ -5,7 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class scoreKeeper : MonoBehaviour
 {
+    // Variables
+
     float playerScore = 0;
+
+    // ---------------------------------------------------------------------------
 
     void Awake()
     {
@@ -14,6 +18,10 @@ public class scoreKeeper : MonoBehaviour
 
     private void OnLevelWasLoaded(int level)
     {
+        if (level == 0)
+        {
+            Destroy(gameObject);
+        }    
         if(level == 1)
         {
             playerScore = 0;

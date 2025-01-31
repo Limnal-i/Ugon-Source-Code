@@ -5,8 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class playerCollision : MonoBehaviour
 {
+    // Variables
+
     scoreKeeper scoreScript;
     gameManager gameManager;
+
+    // ---------------------------------------------------------------------------------
+
     private void Start()
     {
         scoreScript = GameObject.FindAnyObjectByType<scoreKeeper>();

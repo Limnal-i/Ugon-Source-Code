@@ -3,44 +3,21 @@ using UnityEngine.EventSystems;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class spriteButton : MonoBehaviour, IPointerClickHandler,
-                                  IPointerDownHandler, IPointerEnterHandler,
-                                  IPointerUpHandler, IPointerExitHandler
+public class spriteButton : MonoBehaviour, IPointerClickHandler,IPointerDownHandler, IPointerEnterHandler,IPointerUpHandler, IPointerExitHandler
 {
-    // Code coppied from https://stackoverflow.com/a/37906512 made by stackoverflow user Programmer
+    // Code adapted from https://stackoverflow.com/a/37906512 made by stackoverflow user Programmer
 
+    // Variables
     [SerializeField] string levelToLoad;
+
+    // ---------------------------------------------------------------------------
 
     void Start()
     {
-        //Attach Physics2DRaycaster to the Camera
+        //Attach Physics2DRaycaster to the Camera for mouse input detection
         Camera.main.gameObject.AddComponent<Physics2DRaycaster>();
 
         addEventSystem();
-    }
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        SceneManager.LoadScene(levelToLoad);
-    }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-
-    }
-
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-
-    }
-
-    public void OnPointerUp(PointerEventData eventData)
-    {
-
-    }
-    public void OnPointerExit(PointerEventData eventData)
-    {
-
     }
 
     //Add Event System to the Camera
@@ -68,4 +45,24 @@ public class spriteButton : MonoBehaviour, IPointerClickHandler,
         }
     }
 
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        SceneManager.LoadScene(levelToLoad);
+    }
+
+    //---------------------------------------------------
+
+    //Code below needed to keep needed IPointer inherited behaviour functional.
+    public void OnPointerDown(PointerEventData eventData)
+    {
+    }
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+    }
+    public void OnPointerUp(PointerEventData eventData)
+    {
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+    }
 }

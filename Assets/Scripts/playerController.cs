@@ -12,13 +12,11 @@ public class playerController : MonoBehaviour
 
     // ---------------------------------------------------------------------------
 
-    // Enable script to access Ridgidbody component
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Detect input and add velocity to player object. Play sound effect.
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
