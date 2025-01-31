@@ -9,6 +9,8 @@ public class spriteButton : MonoBehaviour, IPointerClickHandler,
 {
     // Code coppied from https://stackoverflow.com/a/37906512 made by stackoverflow user Programmer
 
+    [SerializeField] string levelToLoad;
+
     void Start()
     {
         //Attach Physics2DRaycaster to the Camera
@@ -19,7 +21,7 @@ public class spriteButton : MonoBehaviour, IPointerClickHandler,
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene(levelToLoad);
     }
 
     public void OnPointerDown(PointerEventData eventData)
