@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Obstacle
   - Quit
+  - Score
   layers:
   - Default
   - TransparentFX
