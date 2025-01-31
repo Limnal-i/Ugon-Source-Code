@@ -23,6 +23,11 @@ public class scoreText : MonoBehaviour
 
     void Update()
     {
+
+    }
+
+    private void FixedUpdate()
+    {
         if (SceneManager.GetActiveScene().name == "Game")
         {
             scoreDisplay.text = "Score: " + scoreScript.getScore();

@@ -448,9 +448,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'W or Up Arrow
-
-    to move up
+  m_text: 'W or Up Arrow to move up
 
 
     S or Down Arrow to move down
