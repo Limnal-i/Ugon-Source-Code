@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,11 +9,11 @@ using UnityEngine.UI;
 public class scoreText : MonoBehaviour
 {
     scoreKeeper scoreScript;
-    Text scoreDisplay;
+    private TMP_Text scoreDisplay;
     private void Start()
     {
         scoreScript = GameObject.FindAnyObjectByType<scoreKeeper>();
-        scoreDisplay = GetComponent<Text>();
+        scoreDisplay = GetComponent<TMP_Text>();
     }
 
     // Update is called once per frame
