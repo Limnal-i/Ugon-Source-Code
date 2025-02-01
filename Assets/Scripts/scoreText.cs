@@ -15,24 +15,16 @@ public class scoreText : MonoBehaviour
 
     // ---------------------------------------------------------------------------
 
-    private void Start()
+    void Update()
     {
         scoreScript = GameObject.FindAnyObjectByType<scoreKeeper>();
         scoreDisplay = GetComponent<TMP_Text>();
-    }
 
-    void Update()
-    {
-
-    }
-
-    private void FixedUpdate()
-    {
         if (SceneManager.GetActiveScene().name == "Game")
         {
             scoreDisplay.text = "Score: " + scoreScript.getScore();
         }
-        else
+        else if (SceneManager.GetActiveScene().name == "GameOver")
         {
             scoreDisplay.text = Convert.ToString(scoreScript.getScore());
         }
